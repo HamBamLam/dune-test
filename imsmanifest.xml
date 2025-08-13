@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- generic schema definitions -->
+<manifest identifier="com.demo.dune.password_video"
+          version="1.0"
+          xmlns="http://www.imsglobal.org/xsd/imscp_v1p1"
+          xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_v1p3"
+          xmlns:adlseq="http://www.adlnet.org/xsd/adlseq_v1p3"
+          xmlns:adlnav="http://www.adlnet.org/xsd/adlnav_v1p3"
+          xmlns:imsss="http://www.imsglobal.org/xsd/imsss"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 
+                              imscp_v1p1.xsd
+                              http://www.adlnet.org/xsd/adlcp_v1p3 
+                              adlcp_v1p3.xsd
+                              http://www.adlnet.org/xsd/adlseq_v1p3
+                              adlseq_v1p3.xsd
+                              http://www.adlnet.org/xsd/adlnav_v1p3
+                              adlnav_v1p3.xsd
+                              http://www.imsglobal.org/xsd/imsss
+                              imsss_v1p0.xsd">
+    <metadata>
+        <schema>ADL SCORM</schema>
+        <schemaversion>2004 4th Edition</schemaversion>
+    </metadata>
+    <organizations default="org1">
+        <organization identifier="org1">
+            <imsss:sequencing>
+                <imsss:controlMode choice="true" flow="true"/>
+            </imsss:sequencing>
+            <!--Single sco for simplicity-->
+            <item identifier="item1" identifierref="res1">
+                <title>Password Security</title>
+                <imsss:sequencing>
+                    <imsss:deliveryControls completionSetByContent="true" objectiveSetByContent="true"/>
+                </imsss:sequencing>
+            </item>
+        </organization>
+    </organizations>
+    <resources>
+        <!--Single sco with multiple html files for navigating windows-->
+        <resource identifier="res1" type="webcontent" adlcp:scormType="sco" href="Password_Video.html">
+            <file href="Password_Video.html"/><!-- Main Page with Video -->
+            <file href="scormfunctions.js"/><!-- Generic JavaScript for all SCORM API calls -->
+            <file href="quiz_functions.js"/><!-- Quiz Functions -->
+            <file href="passwords.mp4"/><!-- Video File -->
+
+        </resource>
+    </resources>
+</manifest>
